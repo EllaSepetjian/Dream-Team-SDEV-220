@@ -1,4 +1,5 @@
-#vehicle class with custrutor    
+#vehicle class with custrutor 
+# Hi
 class Vehicle:
 	def __init__(self,type):   #constructor for type
 		self.type=type 
