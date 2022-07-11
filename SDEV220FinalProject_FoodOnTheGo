@@ -10,13 +10,44 @@ from tkinter import *
 # User Account
 # - user sign in
 # - log in
+# The root of our GUI program
+Root = Tk()
 
+# Title
+Root.title("Food On The Go")
 
+# Background color
+Root.configure(bg = "blue")
+
+# Define my NameLabel before my function so I can delete it if the user tries different names
+NameLabel = Label(Root)
+
+# A function to display the user's name
+def HelloName():
+    global NameLabel
+
+    if InputName.get() == "":
+        messagebox.showerror(title = "Name Error", message = "Please enter your name.")
+
+    else:
+        # This deletes any name that the label is holding 
+        NameLabel.destroy()
+
+        # This label greats the user by their name
+        NameLabel = Label(Root, text = "Hello " + InputName.get(), font=("Comic Sans MS", 20), justify = "left")
+        NameLabel.configure(bg = "pink")
+        NameLabel.grid(row = 5, column = 1, sticky = "W")
+    
+
+        # Play button
+        PlayButton = Button(Root, text = "Now you may order at will!", font=("Comic Sans MS", 15), command = NewWindow)
+        PlayButton.configure(bg = "deepskyblue", fg = "white")
+        PlayButton.grid(row = 5, column = 2, sticky = "W")
 # User Item Select
 # Define Classes (Start with donuts and add other later!)
 
 class Donuts:
-  def __init__(self, type
+  def __init__(self, type)
     # getting the desired type of donut
     # 4 basic are yeast, cake, long john, bismark
     self.type = type
