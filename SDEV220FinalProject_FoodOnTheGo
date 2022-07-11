@@ -1,0 +1,16 @@
+# Food on the Go
+# SDEV220 Mr. Lonnie
+# Fantahun, Dakota, Ella, Charles
+# This project 
+
+# Importing Working module
+from tkinter import * 
+
+
+# User Account
+# - user sign in
+# - log in
+
+
+# User Item Select
+# Define Classes (Start with donuts and add other later!)
