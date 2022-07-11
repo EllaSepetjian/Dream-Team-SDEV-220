@@ -5,7 +5,7 @@
 
 # Importing Working module
 from tkinter import * 
-
+from PIL import ImageTk,Image
 
 # User Account
 # - user sign in
@@ -16,8 +16,12 @@ Root = Tk()
 # Title
 Root.title("Food On The Go")
 
+#Icon in the corner image
+Image = ImageTk.PhotoImage(file = "car.PNG")
+Root.iconphoto(False, Image)
+
 # Background color
-Root.configure(bg = "blue")
+Root.configure(bg = "deepskyblue")
 
 # Define my NameLabel before my function so I can delete it if the user tries different names
 NameLabel = Label(Root)
@@ -34,21 +38,74 @@ def HelloName():
         NameLabel.destroy()
 
         # This label greats the user by their name
-        NameLabel = Label(Root, text = "Hello " + InputName.get(), font=("Comic Sans MS", 20), justify = "left")
-        NameLabel.configure(bg = "pink")
+        NameLabel = Label(Root, text = "Hello " + InputName.get(), font=("Comic Sans MS", 20), justify = "center")
+        NameLabel.configure(bg = "deepskyblue")
         NameLabel.grid(row = 5, column = 1, sticky = "W")
     
 
-        # Play button
-        PlayButton = Button(Root, text = "Now you may order at will!", font=("Comic Sans MS", 15), command = NewWindow)
-        PlayButton.configure(bg = "deepskyblue", fg = "white")
-        PlayButton.grid(row = 5, column = 2, sticky = "W")
+        # Order button
+        StartOrderButton = Button(Root, text = "Start Ordering!", font=("Comic Sans MS", 15), command = NewWindow)
+        StartOrderButton.configure(bg = "white", fg = "black")
+        StartOrderButton.grid(row = 5, column = 2, sticky = "W")
+
+# Size
+Root.geometry("850x488")
+
+# Ctreating labels (or print statements)
+MainLabel = Label(Root, text = "Hello and Welcome to Food on the Go!", padx = 50, font=("Comic Sans MS", 24), justify = "left")
+MainLabel.configure(bg = "deepskyblue")
+MainLabel.grid(row = 0, column = 0, columnspan = 4)
+
+# A space between rows
+MySpaceLabel = Label(Root)
+MySpaceLabel.configure(bg = "deepskyblue")
+MySpaceLabel.grid(row = 1, column = 0)
+
+# Car picture  (For some reason it wasn't working for me)
+#CarPic = PhotoImage(file = "car.PNG")
+#CarPic = Label(Root, text = "Car", image = car)
+#CarPic.grid(row = 6, column = 0)
+
+# Enter Name Label
+EnterNameLabel = Label(Root, text = "Please enter your name in the field below.", font=("Comic Sans MS", 20), justify = "center")
+EnterNameLabel.configure(bg = "deepskyblue")
+EnterNameLabel.grid(row = 2, column = 1, sticky = "W")
+
+# Input name
+InputName = Entry(Root, text = "Please enter your name.", font=("Comic Sans MS", 22), justify = "left")
+InputName.grid(row = 3, column = 1, sticky = "W")
+
+# Submit name button
+NameButton = Button(Root, text = "Submit", command = HelloName, font=("Comic Sans MS", 15))
+NameButton.configure(bg = "white", fg = "black")
+NameButton.grid(row = 3, column = 2, sticky = "W")
+
+# A space between rows
+MySpaceLabel = Label(Root)
+MySpaceLabel.configure(bg = "deepskyblue")
+MySpaceLabel.grid(row = 4, column = 1)
+
+
+# SECOND WINDOW HURRAY!!!
+def NewWindow():
+
+    # New window and name
+    GameWindow = Toplevel()
+    GameWindow.title("Home Page")
+
+    
+    #Icon in the corner image
+    Image = ImageTk.PhotoImage(file = "car.PNG")
+    GameWindow.iconphoto(False, Image)
+
+    # Size of the window
+    GameWindow.geometry("1000x515")
+
 # User Item Select
 # Define Classes (Start with donuts and add other later!)
 
 class Donuts:
-  def __init__(self, type)
+  def __init__(self, type):
     # getting the desired type of donut
     # 4 basic are yeast, cake, long john, bismark
     self.type = type
-    
