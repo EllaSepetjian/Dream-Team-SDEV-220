@@ -15,3 +15,9 @@ from tkinter import *
 # User Item Select
 # Define Classes (Start with donuts and add other later!)
 
+class Donuts:
+  def __init__(self, type
+    # getting the desired type of donut
+    # 4 basic are yeast, cake, long john, bismark
+    self.type = type
+    
