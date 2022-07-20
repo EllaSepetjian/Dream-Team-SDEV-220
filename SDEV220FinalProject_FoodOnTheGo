@@ -1,7 +1,7 @@
 # Food on the Go
 # SDEV220 Mr. Lonnie
 # Fantahun, Dakota, Ella, Charles
-# This project 
+# This project will lead the user throiugh an odering process with the end result being their final order and total cost
 
 # Importing Working module
 from tkinter import * 
@@ -109,3 +109,15 @@ class Donuts:
     # getting the desired type of donut
     # 4 basic are yeast, cake, long john, bismark
     self.type = type
+
+donutsDict = {100: Glazed,
+              200: Long John,
+              300: Creme Filled,
+              400: Holland,
+              500: Cake Donuts,
+              600: Powdered Donuts,
+              700: Jelly Donuts,
+              900: Sour Creme,
+              1000: Crullers,
+              
+             }
